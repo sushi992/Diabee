@@ -1,0 +1,14 @@
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\bin\Debug\netstandard2.0\Diabee.deps.json
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\bin\Debug\netstandard2.0\Diabee.dll
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\bin\Debug\netstandard2.0\ref\Diabee.dll
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\bin\Debug\netstandard2.0\Diabee.pdb
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\Diabee.csprojAssemblyReference.cache
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\Diabee.AssemblyInfoInputs.cache
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\Diabee.AssemblyInfo.cs
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\Diabee.dll
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\ref\Diabee.dll
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\Diabee.pdb
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\GreetPage.xaml.g.cs
+C:\Users\suzana\source\repos\Diabee\Diabee\Diabee\obj\Debug\netstandard2.0\XamlC.stamp
