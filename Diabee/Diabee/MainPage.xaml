@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Diabee.MainPage"
+             MasterBehavior="Popover">
+    <MasterDetailPage.Master>
+        <ContentPage Padding="10" BackgroundColor="White" Title="Main Menu">
+            <ContentPage.Content>
+                <StackLayout Margin="5, 30, 5, 5">
+                    <Image Source="diabee.png"></Image>
+                    <Label Text="Menu" FontSize="60"
+                       VerticalOptions="Center"
+                       TextColor="Black"
+                       HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Lobster-Regular" />
+                                <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <Button CornerRadius="30" Text="Glucose Reading" TextColor="Black"
+                            Style="{StaticResource MenuButtonStyle}" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"
+                            Clicked="GlucoseReadingPage_Clicked">
+
+                    </Button>
+                    <Button CornerRadius="30" Text="Weight Reading" TextColor="Black"
+                            Style="{StaticResource MenuButtonStyle}" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"
+                            Clicked="WeightReadingPage_Clicked">
+
+                    </Button>
+                    <Button CornerRadius="30" Text="Glucose History" TextColor="Black"
+                            Style="{StaticResource MenuButtonStyle}" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"
+                            Clicked="GlucoseHistoryPage_Clicked">
+
+                    </Button>
+                    <Button CornerRadius="30" Text="Weight History" TextColor="Black"
+                            Style="{StaticResource MenuButtonStyle}" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"
+                            Clicked="WeightHistoryPage_Clicked">
+
+                    </Button>
+                    <Button CornerRadius="30" Text="Settings" TextColor="Black"
+                            Style="{StaticResource MenuButtonStyle}" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"
+                            Clicked="SettingsPage_Clicked">
+
+                    </Button>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Padding="10">
+            <ContentPage.Content>
+                <StackLayout Margin="5, 30, 5, 5">
+                    <Label Text="Detail Page"/>
+
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

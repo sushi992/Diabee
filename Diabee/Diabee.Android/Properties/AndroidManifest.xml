@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.1" package="com.medixapps.diabee" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="27" android:targetSdkVersion="28" />
+	<application android:label="Diabee">
+		<activity android:name="Diabee" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"></activity>
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<supports-screens android:smallScreens="false" android:normalScreens="false" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+</manifest>

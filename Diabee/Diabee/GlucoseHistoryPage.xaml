@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Glucose History"
+             xmlns:local="clr-namespace:Diabee"
+             x:Class="Diabee.GlucoseHistoryPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TimeSpanToTimeStringConverter x:Key="TimeSpanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Label Text="Glucose History"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="42" TextColor="White">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Lobster-Regular" />
+                        <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                        <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <ListView x:Name="ThreeColumnListView"
+                          ItemsSource="{Binding GlucoseData}"
+                          HasUnevenRows="False" BackgroundColor="Black" SeparatorVisibility="None">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20*" />
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Date" FontSize="Large" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" Grid.Column="0" Grid.Row="0" />
+                        <Label Text="Time" FontSize="Large" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="mmol/l" FontSize="Large" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" Grid.Column="2" Grid.Row="0" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="10*" />
+                                    <ColumnDefinition Width="10*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label FontSize="20" TextColor="White" Grid.Column="0" Text="{Binding HistoryDate}"/>
+                                <Label FontSize="20" TextColor="White" Grid.Column="1" Text="{Binding HistoryTime, Converter={StaticResource TimeSpanConverter}}"/>
+                                <Label FontSize="20" TextColor="White" Grid.Column="2" Text="{Binding GlucoseValue}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

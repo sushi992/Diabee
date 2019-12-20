@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Diabee"
+             Title="Weight Reading"
+             mc:Ignorable="d"
+             x:Class="Diabee.WeightReadingPage"
+             BackgroundColor="Black">
+    <Grid VerticalOptions="FillAndExpand" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+            <Label Text="{Binding LabelText}" HorizontalOptions="CenterAndExpand"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+               TextColor="White" 
+               BackgroundColor="Black" FontSize="42">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Lobster-Regular" />
+                        <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                        <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+        </StackLayout>
+        <StackLayout Grid.Row="1">
+            <Frame BackgroundColor="Black" BorderColor="Gray" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <DatePicker
+                    MinimumDate="{Binding MinimumDate}"
+                    MaximumDate="{Binding CurrentDate}"
+                    Date="{Binding CurrentSelectedDate}"
+                    BackgroundColor="Black"
+                    Format="D"
+                    TextColor="White"/>
+
+
+                    <TimePicker
+                    Time="{Binding CurrentTime}"
+                    BackgroundColor="Black"
+                    Format="T"
+                    TextColor="White"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Margin="10">
+            <Label Text="Slide to input your weight in Kg" HorizontalOptions="FillAndExpand"
+                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                               TextColor="White" FontSize="24">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Lobster-Regular" />
+                        <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                        <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <ContentView Padding="5">
+                <Label Text="{Binding Source={x:Reference weightSlider}, Path=Value, StringFormat='{0:F0}'}"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                   TextColor="White"
+                                   FontSize="40">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Lobster-Regular" />
+                            <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                            <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </ContentView>
+            <local:CustomSlider x:Name="weightSlider"
+                                Value="{Binding WeightLevelBeforePoint, Mode=TwoWay}"
+	                            HeightRequest="30" 
+	                            WidthRequest="350" 
+	                            HorizontalOptions="FillAndExpand"
+                                Maximum="300"
+	                            Minimum="30" />
+
+            <ContentView Padding="5">
+                <Label Text="{Binding Source={x:Reference weightDecimalSlider}, Path=Value, StringFormat='{0:F0}'}"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                   TextColor="White"
+                                   FontSize="40">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Lobster-Regular" />
+                            <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                            <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </ContentView>
+            <local:CustomSlider x:Name="weightDecimalSlider"
+                                Value="{Binding WeightLevelAfterPoint, Mode=TwoWay}"
+	                            HeightRequest="30" 
+	                            WidthRequest="350" 
+	                            HorizontalOptions="FillAndExpand"
+	                            Minimum="0" Maximum="9" />
+
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                <ContentView Padding="10">
+                    <Label Text="{Binding FinalWeightValue}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                       TextColor="White"
+                                       FontSize="80">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Lobster-Regular" />
+                                <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                </ContentView>
+                <Button HorizontalOptions="Center" 
+                                    VerticalOptions="Center" 
+                                    Text="Submit"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial"
+                                    BorderColor="White"
+                                    BorderWidth="5"
+                                    TextColor="White"
+                                    BackgroundColor="Black" Command="{Binding SubmitWeightCommand}">
+                    <Button.WidthRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="80" Tablet="100" />
+                    </Button.WidthRequest>
+                    <Button.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="80" Tablet="100" />
+                    </Button.HeightRequest>
+                    <Button.CornerRadius>
+                        <OnIdiom x:TypeArguments="x:Int32" Phone="40" Tablet="60" />
+                    </Button.CornerRadius>
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

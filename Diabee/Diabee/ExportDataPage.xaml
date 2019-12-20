@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Export Data"
+             x:Class="Diabee.ExportDataPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="Black">
+            <Label Margin="10" FontSize="Title"  Text="Save to PDF" TextColor="White"/>
+            <Frame Margin="10, 0, 10, 10" CornerRadius="10" Padding="10" BackgroundColor="Black" BorderColor="White">
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="10" FontSize="Large" Text="{Binding FilePath}" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+            <Label Margin="10" FontSize="Title"  Text="Data that will be saved includes:" TextColor="White"/>
+            <Frame Margin="10, 0, 10, 10" CornerRadius="10" Padding="10" BackgroundColor="Black" BorderColor="White">
+                <StackLayout Orientation="Vertical">
+                    <Label TextColor="White" Margin="10" FontSize="Medium" Text="Glucose History" FontAttributes="Bold"/>
+                    <Label TextColor="White" Margin="10" FontSize="Medium" Text="Weight History" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Button HorizontalOptions="Center" 
+                                VerticalOptions="EndAndExpand" 
+                                Text="Save"
+                                FontSize="14"
+                                FontFamily="Arial"
+                                FontAttributes="Bold"
+                                BorderColor="White"
+                                BorderWidth="5"
+                                Margin="30"
+                                TextColor="White"
+                                BackgroundColor="Black" Command="{Binding ExportFileCommand}">
+                <Button.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="80" Tablet="100" />
+                </Button.WidthRequest>
+                <Button.HeightRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="80" Tablet="100" />
+                </Button.HeightRequest>
+                <Button.CornerRadius>
+                    <OnIdiom x:TypeArguments="x:Int32" Phone="40" Tablet="60" />
+                </Button.CornerRadius>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

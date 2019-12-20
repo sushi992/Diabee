@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Settings"
+             x:Class="Diabee.SettingsPage">
+    <ContentPage.Content>
+        <TableView BackgroundColor="Black" Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Settings">
+                    <TextCell Text="Export All Data" Detail="Used to export to PDF" DetailColor="DeepPink"
+                              Command="{Binding ExportPageCommand}" TextColor="#FFFFFF" />
+                    <TextCell Text="Erase All Data" TextColor="#FFFFFF" 
+                              Detail="This will erase all glucose and weight data stored" 
+                              Command="{Binding EraseDataCommand}" DetailColor="DeepPink" />
+                    <TextCell Text="Privacy Policy" TextColor="#FFFFFF" 
+                              Detail="Click here to view our privacy policy" 
+                              Command="{Binding OpenPrivacyPolicyCommand}" DetailColor="DeepPink" />
+                    <TextCell Text="Terms and Conditions" TextColor="#FFFFFF" 
+                              Detail="Click here to view our terms and conditions" 
+                              Command="{Binding OpenTermsConditionsCommand}" DetailColor="DeepPink" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

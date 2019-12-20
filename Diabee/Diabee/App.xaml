@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Diabee.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:Double" x:Key="MenuButtonFontSize">
+                <On Platform="Android" Value="32"/>
+                <On Platform="iOS" Value="30" />
+            </OnPlatform>
+
+            <Style x:Key="MenuButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="{DynamicResource MenuButtonFontSize}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
